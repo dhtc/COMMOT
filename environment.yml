@@ -21,6 +21,7 @@ dependencies:
 - scikit-learn>=1.0.2
 - importlib-metadata
 - ipykernel
+- pygraphviz
 - pip:
   # - git+https://github.com/benedekrozemberczki/karateclub.git@d750b33
   - karateclub-master.zip
