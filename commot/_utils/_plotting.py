@@ -317,9 +317,9 @@ def plot_cell_signaling(X,
                 if background_legend:
                     ax.legend(markerscale=2.0, loc=[1.0,0.0])
         if plot_method == "cell":
-            ax.quiver(X_vec[:,0], X_vec[:,1], V_cell[:,0], V_cell[:,1], scale=scale, scale_units='x', color=arrow_color)
+            ax.quiver(X_vec[:,0], X_vec[:,1], V_cell[:,0], V_cell[:,1], scale=scale, scale_units='xy', angles = 'xy', color=arrow_color)
         elif plot_method == "grid":
-            ax.quiver(grid_pts[:,0], grid_pts[:,1], V_grid[:,0], V_grid[:,1], scale=scale, scale_units='x', width=grid_width, color=arrow_color)
+            ax.quiver(grid_pts[:,0], grid_pts[:,1], V_grid[:,0], V_grid[:,1], scale=scale, scale_units='xy', angles = 'xy', width=grid_width, color=arrow_color)
         elif plot_method == "stream":
             lengths = np.sqrt((V_grid ** 2).sum(0))
             stream_linewidth *= 2 * lengths / lengths[~np.isnan(lengths)].max()
@@ -332,9 +332,9 @@ def plot_cell_signaling(X,
         sf = spatial_data['scalefactors']['tissue_hires_scalef']
         ax.imshow(img, origin='lower')
         if plot_method == "cell":
-            ax.quiver(X_vec[:,0]*sf, X_vec[:,1]*sf, V_cell[:,0]*sf, V_cell[:,1]*sf, scale=scale, scale_units='x', color=arrow_color)
+            ax.quiver(X_vec[:,0]*sf, X_vec[:,1]*sf, V_cell[:,0]*sf, V_cell[:,1]*sf, scale=scale, scale_units='xy', angles = 'xy', color=arrow_color)
         elif plot_method == "grid":
-            ax.quiver(grid_pts[:,0]*sf, grid_pts[:,1]*sf, V_grid[:,0]*sf, V_grid[:,1]*sf, scale=scale, scale_units='x', width=grid_width, color=arrow_color)
+            ax.quiver(grid_pts[:,0]*sf, grid_pts[:,1]*sf, V_grid[:,0]*sf, V_grid[:,1]*sf, scale=scale, scale_units='xy', angles = 'xy', width=grid_width, color=arrow_color)
         elif plot_method == "stream":
             lengths = np.sqrt((V_grid ** 2).sum(0))
             stream_linewidth *= 2 * lengths / lengths[~np.isnan(lengths)].max()
