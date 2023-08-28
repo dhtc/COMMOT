@@ -25,6 +25,8 @@ def get_cmap_qualitative(cmap_name):
         cmap = plotly.colors.qualitative.Safe
     elif cmap_name == "Vivid":
         cmap = plotly.colors.qualitative.Vivid
+    else:
+        cmap = cmap_name
     return cmap
 
 def linear_clamp_value(x, lower_bound, upper_bound, out_min, out_max):
